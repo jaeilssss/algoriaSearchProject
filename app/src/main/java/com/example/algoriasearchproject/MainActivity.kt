@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var client = Client("Y5P2EINUZX","b17fcc022749dc2ae86e492504aa70f5")
+        var client = Client("","")
 
         var index = client.getIndex("Aparts")
 
@@ -33,8 +33,6 @@ class MainActivity : AppCompatActivity() {
         rcv.adapter = adapter
         rcv.setHasFixedSize(true)
         var handler = CompletionHandler{content , error ->
-            println(content)
-
             var list = ArrayList<Apt>()
 
            var jsonArray  = content?.getJSONArray("hits")
